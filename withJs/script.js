@@ -14,6 +14,7 @@ const text = [
 const form = document.querySelector('.lorem-form');
 const amount = document.getElementById('amount');
 const result = document.querySelector('.lorem-text');
+const btn = document.querySelector('.btn');
 
 form.addEventListener('submit',function(e){
     // Default behaviour for the form is to submitted to a server
@@ -26,7 +27,7 @@ form.addEventListener('submit',function(e){
     // if we use parseInt, then console.log's output is blue (number);
     // if we don't use parseInt, then output is black (string).
 
-    const random = Math.floor(Math.random()*text.length);
+    // const random = Math.floor(Math.random()*text.length);
     // empty
     // -1
     // > 9
@@ -34,7 +35,7 @@ form.addEventListener('submit',function(e){
     //isNaN function determines whether a value is NaN or not.
 
     if(isNaN(value) || value<=0 || value>9){
-        result.innerHTML = `<p class="result">${text[random]}</p>`;
+         btn.disabled();
     }
     else{
         let tempText = text.slice(0, value);
