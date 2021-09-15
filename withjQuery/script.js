@@ -15,10 +15,11 @@ $('.lorem-form').on('submit',function(e){
     e.preventDefault();
     const value = parseInt($('#amount').val());
     console.log(value);
-    const random = Math.floor(Math.random()*text.length);
+    // const random = Math.floor(Math.random()*text.length);
 
     if(isNaN(value) || value<=0 || value>9){
-        $('.lorem-text').html(`<p class="result">${text[random]}</p>`)
+        $('.btn').disabled();
+        // $('.lorem-text').html(`<p class="result">${text[random]}</p>`)
     }
     else{
         let tempText = text.slice(0,value);
